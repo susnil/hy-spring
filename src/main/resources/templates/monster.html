@@ -1,7 +1,7 @@
 <!DOCTYPE html><!--[if IE 8]><html lang="pl" class="ltr ie ie8 no-script"><![endif]-->
 <!--[if IE 9]><html lang="pl" class="ltr ie ie9 no-script"><![endif]-->
 <!-- [if gt IE 9] <!-->
-<html lang="pl" class="ltr no-script">
+<html lang="pl" class="ltr no-script" xmlns:th="http://www.w3.org/1999/xhtml">
   <!-- <![endif]-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -52,26 +52,16 @@
                       </div>
                 </div>
                 <div class="hy-lp-section hy-lp-section--top">
-                      <div class="l-page-row">
+                      <div th:each="monster : ${monster}" class="l-page-row">
                             <div class="l-row">
-                                  <div class="l-col l-col-12 l-col-medium-12 l-col-large-10  large-offset-by-1 u-large-no-padding-r"><img src="assets/images/monster_01.png" alt="">
+                                  <div class="l-col l-col-12 l-col-medium-12 l-col-large-10  large-offset-by-1 u-large-no-padding-r"><img th:attr="src=${monster.getImageSource()}" src="assets/images/monster_01.png" alt="">
                                   </div>
                             </div>
                             <div class="l-row custom-offset-top">
                                   <div class="l-col l-col-11 l-col-medium-11 l-col-large-9  large-offset-by-2 medium-offset-by-1 small-offset-by-1">
                                     <div class="hy-line-txt">
-                                      <p class="hy-line-txt__item">Say hy to spring!</p>
-                                    </div>
-                                  </div>
-                            </div>
-                            <div class="l-row">
-                                  <div class="l-col l-col-12 l-col-medium-12 l-col-large-10  large-offset-by-1 u-large-no-padding-r"><img src="assets/images/monster_02.png" alt="">
-                                  </div>
-                            </div>
-                            <div class="l-row custom-offset-top">
-                                  <div class="l-col l-col-11 l-col-medium-11 l-col-large-9  large-offset-by-2 medium-offset-by-1 small-offset-by-1">
-                                    <div class="hy-line-txt">
-                                      <p class="hy-line-txt__item">Say hy to hyMonsters!</p>
+                                      <p th:text="${monster.getName()}" class="hy-line-txt__item">Name</p>
+                                        <p th:text="${monster.getDescription()}" class="hy-line-txt__item">Info</p>
                                     </div>
                                   </div>
                             </div>
@@ -85,7 +75,7 @@
                                                         <span aria-hidden="true" class="g-icon g-icon--arrow-right g-icon--l g-icon--after u-right"></span></a>
                                         </div>
                                         <div class="l-col l-col-12 l-col-medium-6 l-col-large-7  large-offset-by-1">
-                                          <p class="u-spacing-top-s u-font-small u-font-normal g-brand3-c">@ hycom 2017</p>
+                                          <p class="u-spacing-top-s u-font-small u-font-normal g-brand3-c">@ hycom 2017 & Bartosz Suśniło 2018</p>
                                         </div>
                                   </div>
                             </div>
